@@ -1,0 +1,17 @@
+Events:
+  JoinS:
+    firstJoin:
+    type: player_join
+    conditions:
+    actions:
+      default:
+      - 'console_command: minecraft:effect clear %player%'
+      - 'wait: 1'
+      - 'console_command: minecraft:effect clear %player%'
+      - 'wait: 1'
+      - 'console_command: minecraft:effect clear %player%'
+      - 'console_command: minecraft:effect clear %player%'
+      - 'wait: 1'
+      - 'console_command: minecraft:effect clear %player%'
+      - 'wait: 1'
+      - 'console_command: minecraft:effect clear %player%'

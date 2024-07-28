@@ -1,0 +1,22 @@
+Events:
+ bug:
+    type: player_command
+    conditions:
+    - "%main_command% == /bug"
+    actions:
+      default:
+      - 'cancel_event: true'
+      - 'console_command: minecraft:scoreboard players add %player% vidas 1'
+      - 'wait_ticks: 5'
+      - 'to_all: message: &e&l%player% ha usado /bug'
+      - 'console_command: kill %player%'
+      - 'wait_ticks: 20'
+      - 'console_command: kill %player%'
+      - 'wait_ticks: 20'
+      - 'to_all: message: &c&l%player% &e&lHA RECUPERADO LA VIDA'
+      - 'wait: 1'
+      - 'console_command: minecraft:effect clear %player%'
+      - 'wait: 1'
+      - 'console_command: minecraft:effect clear %player%'
+      - 'wait: 1'
+      - 'console_command: minecraft:effect clear %player%'

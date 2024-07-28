@@ -1,0 +1,41 @@
+[
+  {
+    "id": 1,
+    "uuid": "eb73a802-bbc0-4913-9b28-2c42b9f5b978",
+    "hologramHeight": 0.0,
+    "skin": "",
+    "signature": "",
+    "location": {
+      "world": "world",
+      "x": 18.5,
+      "y": 310.0,
+      "z": 0.5,
+      "yaw": -180.0,
+      "pitch": 0.0
+    },
+    "npcType": "PLAYER",
+    "hologramLines": [
+      "&aRTP"
+    ],
+    "clickActions": [
+      {
+        "actionType": "CMD",
+        "clickType": "DEFAULT",
+        "action": "%player%",
+        "delay": 0
+      },
+      {
+        "actionType": "CONSOLE",
+        "clickType": "DEFAULT",
+        "action": "rtp player %player_name%",
+        "delay": 0
+      }
+    ],
+    "npcEquip": {},
+    "npcFunctions": {
+      "holo": true,
+      "look": true
+    },
+    "customizationMap": {}
+  }
+]

@@ -1,0 +1,122 @@
+Enabled: true
+
+CheckInvisiblesTime: 1 #How often (in seconds) should the plugin check for player invisibility?
+
+CommandOptions:
+   SeeInvisible:
+      AddGlow: true
+      UseFakeTeam: true
+
+PlayerFeatures:
+   OnDamageRecive:
+      RemoveInvisibility: false
+      Whitelist:
+         #If enabled only specific damage events will remove player invisibility
+         Enable: false
+         #If whiteListMode is true only the events in the list will remove player invisibility
+         #otherwise it will work like a blacklist
+         WhiteListMode: false
+         #The list can be found at https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/entity/EntityDamageEvent.DamageCause.html
+         List:
+         - void
+      AfterDamage:
+         #Does the player become Invisible again after a while?
+         ReturnsInvisible: false
+         #How long (in ticks, 20 ticks = 1 second) it takes the player become invisible again
+         TimeInTicks: 60
+         #If the time during which the player becomes visible due to damage is removed from the Invisibility effect
+         RemovePassedTime: false
+   #Same as OnDamageRecive above, but when players attack     
+   OnDamageGive:
+      RemoveInvisibility: false
+      Whitelist:
+         Enable: false
+         WhiteListMode: true
+         #The valid options for Damage give are ENTITY_ATTACK, ENTITY_EXPLOSION and ENTITY_SWEEP_ATTACK
+         List:
+         - void
+      AfterDamage:
+         ReturnsInvisible: false
+         TimeInTicks: 60
+         RemovePassedTime: false
+   Particles: 
+      Remove: true
+      Permission: "" #If empty, player dont need permission
+   Armor:
+      Hide: true
+      Permission: "" #If empty, player dont need permission
+      HideParts:
+         helmet: true
+         chestplate: true
+         leggings: true
+         boots: true
+         mainhand: true
+         offhand: true
+              
+#Same as PlayerFeatures above, but for mobs instead       
+MobFeatures:
+   OnDamageRecive:
+      RemoveInvisibility: false
+      Whitelist:
+         Enable: false
+         WhiteListMode: false
+         List:
+         - void
+      AfterDamage:
+         ReturnsInvisible: false
+         TimeInTicks: 60
+         RemovePassedTime: false
+   OnDamageGive:
+      RemoveInvisibility: false
+      Whitelist:
+         Enable: false
+         WhiteListMode: false
+         List:
+         - void
+      AfterDamage:
+            #Does the player become Invisible again after a while?
+         ReturnsInvisible: false
+            #How long (in ticks, 20 ticks = 1 second) it takes the player become invisible again
+         TimeInTicks: 60
+            #If the time during which the player becomes visible due to damage is removed from the Invisibility effect
+         RemovePassedTime: false
+   Particles: 
+      Remove: true
+   Armor:
+      Hide: true
+      HideParts:
+         helmet: true
+         chestplate: true
+         leggings: true
+         boots: true
+         mainhand: true
+         offhand: true
+
+MobTarget:
+   Enabled: true
+   Groups:
+      Default:
+         #Specify the default Invisibility level where mobs will ignore players
+         DefaultBlindTier: 1 #  If 0 mobs will see invisible players like in vanilla
+                             #  If 1 mobs will not be able to see players with Invisibility I or higher
+                             #  If 2 mobs will not be able to see players with Invisibility II or higher
+                             #  If x mobs will not be able to see players with Invisibility x or higher
+                             #  If less then 0 mobs will always be able to see invisible players
+         # You can set a custom tier per mob by mob type or custom name.         
+         # Add/remove as many mobs as you want. All mobs not in this list will use DefaultBlindTier above.
+         MobsThatSeeInvisible: 
+            Vex: -1 # Vex will always see the player, even if the player has Invisibility.
+            Evoker: -1 # Evokers will always see the player.
+            Witch: 2 # Witches will ignore the player only if the player has Invisibility II or higher
+            Creeper: 2 # Witches will ignore the player only if the player has Invisibility II or higher
+            (Name) &6Xaman Zombie: -1 #For custom mobs, put (Name) before the mob name!!
+      Tier2:
+         Pemission: "betterinvisibility.tier2"
+         DefaultBlindTier: 1
+         MobsThatSeeInvisible: 
+            Vex: 1
+            Evoker: 1
+                
+DisabledWorlds:
+   - World_Disable
+

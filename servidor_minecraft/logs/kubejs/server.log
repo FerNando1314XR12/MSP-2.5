@@ -1,0 +1,8 @@
+[18:45:53] [INIT] KubeJS 1902.6.2-build.73; MC 1902 forge
+[18:45:53] [INIT] Loaded plugins:
+[18:45:53] [INIT] - dev.latvian.mods.kubejs.forge.BuiltinKubeJSForgePlugin
+[18:45:53] [INFO] example.js#5: Hello, World! (Loaded server scripts)
+[18:45:53] [INFO] Loaded script server_scripts:example.js in 0.0 s
+[18:45:53] [INFO] Loaded script enhancedcelestials:kubejs/extreme_zombie_moon.js in 0.008 s
+[18:45:53] [INFO] Loaded 2/2 KubeJS server scripts in 0.02 s
+[18:45:53] [INFO] Scripts loaded
